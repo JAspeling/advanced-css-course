@@ -13,3 +13,11 @@ $color-black: #000;
 $grid-width: 114rem;      // 1140px;
 $gutter-vertical: 8rem;   
 $gutter-horizontal: 6rem;
+
+// FONT
+$default-font-size: 1.6rem;
+
+// SHADOW
+// X, Y, Blur, Color
+$default-box-shadow-hover: 0 1rem 2rem rgba($color-black, 0.2);
+$default-box-shadow-click: 0 0.5rem 2rem rgba($color-black, 0.2);
