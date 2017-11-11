@@ -1,0 +1,3 @@
+@function calculate-col-width($i, $j) {
+  @return calc( #{$i}/#{$j} * (100% - ((#{$j} - 1) * #{$gutter-horizontal})) + ((#{$i - 1}) * #{$gutter-horizontal} ));
+}

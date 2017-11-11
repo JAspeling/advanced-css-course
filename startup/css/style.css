@@ -73,6 +73,28 @@ body {
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
 .btn {
   /*
     Used for the animation when hovering over the button, creates a 'shadow' button that will be 
@@ -120,6 +142,96 @@ body {
     /* apply the 0% of the animation before the animation starts. */
     animation-fill-mode: backwards; }
 
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  /* This is a selector. Can be used for multiple scenarios, for instance 
+    Links, selcting all the links that open in a new tab, can be styled 
+    differently than those that open on the current window.
+  */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-1 {
+    width: calc( 1/1 * (100% - ((1 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-1-of-2 {
+    width: calc( 1/2 * (100% - ((2 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-1-of-3 {
+    width: calc( 1/3 * (100% - ((3 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-1-of-4 {
+    width: calc( 1/4 * (100% - ((4 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-1-of-5 {
+    width: calc( 1/5 * (100% - ((5 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-1-of-6 {
+    width: calc( 1/6 * (100% - ((6 - 1) * 6rem)) + ((0) * 6rem )); }
+  .row .col-2-of-1 {
+    width: calc( 2/1 * (100% - ((1 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-2-of-2 {
+    width: calc( 2/2 * (100% - ((2 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-2-of-3 {
+    width: calc( 2/3 * (100% - ((3 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-2-of-4 {
+    width: calc( 2/4 * (100% - ((4 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-2-of-5 {
+    width: calc( 2/5 * (100% - ((5 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-2-of-6 {
+    width: calc( 2/6 * (100% - ((6 - 1) * 6rem)) + ((1) * 6rem )); }
+  .row .col-3-of-1 {
+    width: calc( 3/1 * (100% - ((1 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-3-of-2 {
+    width: calc( 3/2 * (100% - ((2 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-3-of-3 {
+    width: calc( 3/3 * (100% - ((3 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-3-of-4 {
+    width: calc( 3/4 * (100% - ((4 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-3-of-5 {
+    width: calc( 3/5 * (100% - ((5 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-3-of-6 {
+    width: calc( 3/6 * (100% - ((6 - 1) * 6rem)) + ((2) * 6rem )); }
+  .row .col-4-of-1 {
+    width: calc( 4/1 * (100% - ((1 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-4-of-2 {
+    width: calc( 4/2 * (100% - ((2 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-4-of-3 {
+    width: calc( 4/3 * (100% - ((3 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-4-of-4 {
+    width: calc( 4/4 * (100% - ((4 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-4-of-5 {
+    width: calc( 4/5 * (100% - ((5 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-4-of-6 {
+    width: calc( 4/6 * (100% - ((6 - 1) * 6rem)) + ((3) * 6rem )); }
+  .row .col-5-of-1 {
+    width: calc( 5/1 * (100% - ((1 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-5-of-2 {
+    width: calc( 5/2 * (100% - ((2 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-5-of-3 {
+    width: calc( 5/3 * (100% - ((3 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-5-of-4 {
+    width: calc( 5/4 * (100% - ((4 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-5-of-5 {
+    width: calc( 5/5 * (100% - ((5 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-5-of-6 {
+    width: calc( 5/6 * (100% - ((6 - 1) * 6rem)) + ((4) * 6rem )); }
+  .row .col-6-of-1 {
+    width: calc( 6/1 * (100% - ((1 - 1) * 6rem)) + ((5) * 6rem )); }
+  .row .col-6-of-2 {
+    width: calc( 6/2 * (100% - ((2 - 1) * 6rem)) + ((5) * 6rem )); }
+  .row .col-6-of-3 {
+    width: calc( 6/3 * (100% - ((3 - 1) * 6rem)) + ((5) * 6rem )); }
+  .row .col-6-of-4 {
+    width: calc( 6/4 * (100% - ((4 - 1) * 6rem)) + ((5) * 6rem )); }
+  .row .col-6-of-5 {
+    width: calc( 6/5 * (100% - ((5 - 1) * 6rem)) + ((5) * 6rem )); }
+  .row .col-6-of-6 {
+    width: calc( 6/6 * (100% - ((6 - 1) * 6rem)) + ((5) * 6rem )); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -143,6 +255,11 @@ body {
     /* Transforms the element,  */
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
 
 /* 
  SASS Pens:
