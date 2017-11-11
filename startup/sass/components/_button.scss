@@ -1,0 +1,64 @@
+.btn {
+  &:link, 
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* X, Y, Blur, Color */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    
+    &::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  /*
+    Used for the animation when hovering over the button, creates a 'shadow' button that will be 
+    modified, and rendered behind the actual button. Applies to all elements of the .btn class.
+  */
+  &::after {
+    /* ::before and ::after psuedo elements should always define some content for it to be used */
+    content: "";
+    /* not really needed as we are using absolute positioning with fixed top and left attributes, relative to the button container.  */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    /* Absoulte positoning to position the element 100% relative to the actual button, rendered behind it. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; 
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animation {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* apply the 0% of the animation before the animation starts. */
+    animation-fill-mode: backwards;
+  }
+  
+}

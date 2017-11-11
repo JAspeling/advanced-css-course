@@ -1,82 +1,3 @@
-/* 
-
- SASS Pens:
- https://codepen.io/anon/pen/qVrpyv?editors=1100
-
- */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  /* Forces all the elements to inherit the box-sizing property */
-  box-sizing: inherit; }
-
-html {
-  /* 16 px = 10 / 16px = 0.625 */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", "sans-serif";
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  /* Need this to tell the children object where the absolute positioning should be based from (top/left/bottom, etc.) */
-  position: relative;
-  /* always tries to set the viewport. */
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
-
-.header__logo-box {
-  /* absolute from the relative parent, 'header' */
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* Transforms the element,  */
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.header-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem; }
-
-.header-primary--main {
-  /* block occupies the entire available width, and create line breaks before and after the element. */
-  /* Note: Span defaults to inline-block. 
-      - inline-block is used to render items next o each other instead of underneath each other.
-  */
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.header-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -104,56 +25,126 @@ body {
   100% {
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative; }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* Forces all the elements to inherit the box-sizing property */
+  box-sizing: inherit; }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* X, Y, Blur, Color */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+html {
+  /* Defines what 1rem is:
+    16 px = 10 / 16px = 0.625 
+  */
+  font-size: 62.5%; }
 
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+body {
+  padding: 3rem;
+  box-sizing: border-box; }
 
-/*
-  Used for the animation when hovering over the button, creates a 'shadow' button that will be 
-  modified, and rendered behind the actual button. Applies to all elements of the .btn class.
-*/
-.btn::after {
-  /* ::before and ::after psuedo elements should always define some content for it to be used */
-  content: "";
-  /* not really neede das we are using absolute positioning with fixed top and left attributes, relative to the button container.  */
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 10rem;
-  /* Absoulte positoning to position the element 100% relative to the actual button, rendered behind it. */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s; }
-
-.btn--white {
-  background-color: #fff;
+body {
+  font-family: "Lato", "sans-serif";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
   color: #777; }
 
-.btn--white::after {
-  background-color: #fff; }
+.header-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .header-primary--main {
+    /* block occupies the entire available width, and create line breaks before and after the element. */
+    /* Note: Span defaults to inline-block. 
+        - inline-block is used to render items next o each other instead of underneath each other.
+    */
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .header-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
-.btn:hover::after {
-  transform: scale(1.5);
-  opacity: 0; }
+.btn {
+  /*
+    Used for the animation when hovering over the button, creates a 'shadow' button that will be 
+    modified, and rendered behind the actual button. Applies to all elements of the .btn class.
+  */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* X, Y, Blur, Color */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scale(1.5);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn::after {
+    /* ::before and ::after psuedo elements should always define some content for it to be used */
+    content: "";
+    /* not really needed as we are using absolute positioning with fixed top and left attributes, relative to the button container.  */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    /* Absoulte positoning to position the element 100% relative to the actual button, rendered behind it. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--animation {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* apply the 0% of the animation before the animation starts. */
+    animation-fill-mode: backwards; }
 
-.btn--animation {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /* apply the 0% of the animation before the animation starts. */
-  animation-fill-mode: backwards; }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  /* Need this to tell the children object where the absolute positioning should be based from (top/left/bottom, etc.) */
+  position: relative;
+  /* always tries to set the viewport. */
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  .header__logo-box {
+    /* absolute from the relative parent, 'header' */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* Transforms the element,  */
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+/* 
+ SASS Pens:
+ https://codepen.io/anon/pen/qVrpyv?editors=1100
+*/
