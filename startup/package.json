@@ -4,14 +4,13 @@
   "description": "Landing page for Natours",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Johan",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.6.0"
+    "node-sass": "^4.5.3"
   },
-  "dependencies": {
-    "jquery": "^3.2.1"
-  }
+  "dependencies": {}
 }
