@@ -1,0 +1,98 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: $radius-large;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-$click-over);
+    box-shadow: $default-box-shadow-hover;
+
+    &::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-$click-down);
+    box-shadow: $default-box-shadow-click;
+  }
+
+  /*
+    Used for the animation when hovering over the button, creates a 'shadow' button that will be 
+    modified, and rendered behind the actual button. Applies to all elements of the .btn class.
+  */
+  &::after {
+    /* ::before and ::after psuedo elements should always define some content for it to be used */
+    content: "";
+    /* not really needed as we are using absolute positioning with fixed top and left attributes, relative to the button container.  */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-large;
+    /* Absoulte positoning to position the element 100% relative to the actual button, rendered behind it. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &--animation {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* apply the 0% of the animation before the animation starts. */
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: .3rem 1rem .3rem 1rem;
+  
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $color-white;
+    box-shadow: $default-box-shadow-hover;
+
+    transform: translateY(-$click-over);
+    transition: all 0.3s;
+  }
+
+  &:active {
+    box-shadow: $default-box-shadow-click;
+    transform: translateY(-$click-down);
+  }
+}
