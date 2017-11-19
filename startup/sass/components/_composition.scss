@@ -5,7 +5,7 @@
 
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
-    border-radius: .2rem;
+    border-radius: $radius-x-small;
     // These elements will be placed according to a reference parent.
     position: absolute;
     z-index: 10;

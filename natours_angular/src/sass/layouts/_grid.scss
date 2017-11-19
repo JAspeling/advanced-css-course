@@ -20,8 +20,8 @@
   // * : contains the part 'col-'
   // $ : ends with "col-"
   [class^="col-"] {
-    background-color: green; 
-    color: #eee;
+    // background-color: green; 
+    // color: #eee;
     float: left;
 
     &:not(:last-child) {

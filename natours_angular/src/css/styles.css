@@ -413,8 +413,6 @@ body {
     clear: both;
     display: table; }
   .row [class^="col-"] {
-    background-color: green;
-    color: #eee;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }

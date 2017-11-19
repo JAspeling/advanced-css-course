@@ -20,7 +20,8 @@
     transition: all 0.8s ease;
     width: 100%;
     backface-visibility: hidden;
-    border-radius: 0.3rem;
+    border-radius: $radius-x-small;
+    overflow: hidden;
     box-shadow: $default-box-shadow-hover;
 
     &--front {
@@ -110,6 +111,7 @@
     top: 12rem;
     right: 2rem;
     width: 75%;
+    z-index: 1;
   }
 
   &__heading-span {
@@ -159,5 +161,32 @@
         }
       }
     }
+  }
+
+  
+  // BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box{
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-1{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-2 {
+    font-size: 6rem;
+    font-weight: 100; 
   }
 }

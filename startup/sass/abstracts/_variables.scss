@@ -28,3 +28,14 @@ $default-font-size: 1.6rem;
 // X, Y, Blur, Color
 $default-box-shadow-hover: 0 1rem 2rem rgba($color-black, 0.2);
 $default-box-shadow-click: 0 0.5rem 2rem rgba($color-black, 0.2);
+
+// Radius
+
+$radius-x-small: .3rem;
+$radius-small: 1rem;
+$radius-medium: 4rem;
+$radius-large: 10rem;
+
+// Click animations
+$click-over: .3rem;
+$click-down: .1rem;
