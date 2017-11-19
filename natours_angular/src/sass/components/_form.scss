@@ -1,0 +1,65 @@
+.form {
+  &__group {
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: $radius-x-small;
+    background-color: rgba($color-white, .5);
+    border: none; 
+    border-bottom: .3rem solid transparent;
+    width: 90%;
+    display: block;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: $default-box-shadow-small;
+      border-bottom: .3rem solid $color-primary;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+    &:focus:invalid{
+      border-bottom: .3rem solid $color-secondary-dark;
+    }
+
+    &:focus:valid {
+      border-bottom: .3rem solid $color-primary;
+    }
+  }
+
+  // cannot be inside the input class because you dont want to style the input,
+  // you want to style the label.
+
+  // Makes use of the Adjacent Sibling selector ('+')
+  // to select the sibling directly after the current element.
+
+  // Can also use the General Sibling Selector ('~')
+  // to select a genreal sibling that is not adjacent to the element.
+
+  // Note: The sibling has to be AFTER the current element.
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+
+    transition: all .3s;
+  }
+}

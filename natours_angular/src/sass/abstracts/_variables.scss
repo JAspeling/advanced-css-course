@@ -13,6 +13,8 @@ $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
 
 $color-grey-dark: #777;
+$color-grey-dark-2: #999;
+
 $color-white: #fff; 
 $color-black: #000;
 
@@ -29,6 +31,7 @@ $default-font-size: 1.6rem;
 $default-box-shadow-hover: 0 1rem 2rem rgba($color-black, 0.2);
 $default-box-shadow-click: 0 0.5rem 2rem rgba($color-black, 0.2);
 $default-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+$default-box-shadow-small: 0 1.5rem 2rem rgba($color-black, 0.1);
 // Radius
 
 $radius-x-small: .3rem;
