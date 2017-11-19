@@ -1,4 +1,6 @@
 .btn {
+  // single '&' used to apply style to 'this' element.
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -8,6 +10,10 @@
     border-radius: $radius-large;
     transition: all 0.2s;
     position: relative;
+
+    //'button' type properties
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -20,7 +26,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-$click-down);
     box-shadow: $default-box-shadow-click;
   }
@@ -78,8 +86,7 @@
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
-    padding: .3rem 1rem .3rem 1rem;
-  
+    padding: 0.3rem 1rem 0.3rem 1rem;
   }
 
   &:hover {

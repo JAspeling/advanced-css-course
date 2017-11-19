@@ -18,3 +18,9 @@ body {
   padding: 3rem;
   box-sizing: border-box;
 }
+
+@include scrollbars(.8, 
+                  $color-primary-dark, 
+                  mix($color-primary-dark, white,  50%), 
+                  true,
+                  false);

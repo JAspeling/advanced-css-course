@@ -5,3 +5,95 @@
     display: table;
   }
 }
+
+/* You can add global styles to this file, and also import other style files */
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars($size,
+                  $foreground-color,  
+                  $background-color: mix($foreground-color, white,  50%),
+                  $showScrollButtons: false,
+                  $positionScrollButtonsBelow: false
+                  ) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    width: #{$size}rem;
+    height: #{$size}rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    transition: all 0.3s;
+    background: $foreground-color;
+    border-radius: 5px;
+    &:hover {
+      background-color: darken($foreground-color, 10%);
+    }
+  }
+  ::-webkit-scrollbar-track {
+    position: absolute;
+    top: -10px;
+    background: $background-color;
+  }
+
+  @if $showScrollButtons == true {
+    ::-webkit-scrollbar-button {
+      background-color: darken($foreground-color, 10%);
+      
+      &:hover {
+        background-color: darken($foreground-color, 25%);
+      }
+
+      &:vertical {
+        height: 1rem;
+        &:decrement {
+          border-radius: 0 0 0.3rem 0.3rem;
+        }
+
+        &:increment {
+          border-radius: 0.3rem 0.3rem 0 0;
+        }
+
+        @if $positionScrollButtonsBelow == true {
+          ::-webkit-scrollbar-button:end {
+            display: block;
+          }
+
+          ::-webkit-scrollbar-button:start {
+            display: none;
+          }
+        }
+      }
+      &:horizontal {
+        width: 1rem;
+        &:decrement {
+          border-radius: 0 0.3rem 0.3rem 0;
+        }
+
+        &:increment {
+          border-radius: 0.3rem 0 0 0.3rem;
+        }
+
+        @if $positionScrollButtonsBelow == true {
+          ::-webkit-scrollbar-button:end {
+            display: block;
+          }
+
+          ::-webkit-scrollbar-button:start {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // For Internet Explorer
+  .panel-body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

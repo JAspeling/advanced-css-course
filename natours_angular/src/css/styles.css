@@ -1,3 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -42,6 +43,43 @@ html {
 body {
   padding: 3rem;
   box-sizing: border-box; }
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem; }
+
+::-webkit-scrollbar-thumb {
+  transition: all 0.3s;
+  background: #28b485;
+  border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #1f8a66; }
+
+::-webkit-scrollbar-track {
+  position: absolute;
+  top: -10px;
+  background: #94dac2; }
+
+::-webkit-scrollbar-button {
+  background-color: #1f8a66; }
+  ::-webkit-scrollbar-button:hover {
+    background-color: #114c38; }
+  ::-webkit-scrollbar-button:vertical {
+    height: 1rem; }
+    ::-webkit-scrollbar-button:vertical:decrement {
+      border-radius: 0 0 0.3rem 0.3rem; }
+    ::-webkit-scrollbar-button:vertical:increment {
+      border-radius: 0.3rem 0.3rem 0 0; }
+  ::-webkit-scrollbar-button:horizontal {
+    width: 1rem; }
+    ::-webkit-scrollbar-button:horizontal:decrement {
+      border-radius: 0 0.3rem 0.3rem 0; }
+    ::-webkit-scrollbar-button:horizontal:increment {
+      border-radius: 0.3rem 0 0 0.3rem; }
+
+.panel-body {
+  scrollbar-face-color: #28b485;
+  scrollbar-track-color: #94dac2; }
 
 body {
   font-family: "Lato", "sans-serif";
@@ -101,49 +139,52 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-medium {
-  margin-top: 4rem; }
+  margin-top: 4rem !important; }
 
 .u-margin-top-small {
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem !important; }
 
 .btn {
   /*
     Used for the animation when hovering over the button, creates a 'shadow' button that will be 
     modified, and rendered behind the actual button. Applies to all elements of the .btn class.
   */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
     display: inline-block;
     border-radius: 10rem;
     transition: all 0.2s;
-    position: relative; }
+    position: relative;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
     .btn:hover::after {
       transform: scale(1.5);
       opacity: 0; }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
   .btn::after {
@@ -181,7 +222,7 @@ body {
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #7ed56f;
-  padding: .3rem 1rem .3rem 1rem; }
+  padding: 0.3rem 1rem 0.3rem 1rem; }
 
 .btn-text:hover {
   background-color: #28b485;
@@ -437,6 +478,50 @@ body {
   margin-top: 0.7rem;
   display: block;
   transition: all .3s; }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 3.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 0.2rem solid #7ed56f;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.4rem;
+  transition: all .3s; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #7ed56f;
+    opacity: 0;
+    transition: all .2s; }
+
+.form__radio-input:checked + .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
+.form__radio-input:not(:checked):hover + .form__radio-label .form__radio-button::after {
+  background-color: rgba(98, 223, 138, 0.5);
+  opacity: 1; }
 
 .row {
   max-width: 114rem;
@@ -795,15 +880,19 @@ body {
   padding: 15rem 0; }
 
 .section-booking {
+  transform: skewY(-6.5deg);
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #62df8a, #28b485); }
+  .section-booking > * {
+    transform: skewY(6.5deg); }
 
 .booking {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../img/nat-10.jpg");
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 53%, transparent 53%), url("../img/nat-10.jpg");
   background-size: cover;
-  border-radius: 0.3rem;
+  border-radius: 1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-  height: 50rem;
+  height: 55rem;
+  min-height: 55rem;
   width: 100%; }
   .booking__form {
     width: 50%;

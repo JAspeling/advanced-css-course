@@ -40,6 +40,11 @@
 }
 
 .section-booking {
+  transform: skewY(-6.5deg);
+  & > * {
+    transform: skewY(6.5deg);
+  }
+
   padding: 15rem 0;
   background-image: linear-gradient(
     to right bottom,
@@ -49,17 +54,18 @@
 }
 .booking {
   background-image: linear-gradient(
-      105deg,
+      100deg,
       rgba($color-white, 0.9) 0%,
-      rgba($color-white, 0.9) 50%,
-      transparent 50%
+      rgba($color-white, 0.9) 53%,
+      transparent 53%
     ),
     url("../img/nat-10.jpg");
   background-size: cover;
-  border-radius: $radius-x-small;
+  border-radius: $radius-small;
   box-shadow: $default-box-shadow;
   // Testing
-  height: 50rem;
+  height: 55rem;
+  min-height: 55rem;
   width: 100%;
   
   &__form {
