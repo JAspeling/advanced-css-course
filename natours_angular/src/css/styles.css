@@ -50,36 +50,19 @@ body {
 
 ::-webkit-scrollbar-thumb {
   transition: all 0.3s;
-  background: #28b485;
+  background: #999;
   border-radius: 5px; }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #1f8a66; }
+    background-color: gray; }
 
 ::-webkit-scrollbar-track {
   position: absolute;
   top: -10px;
-  background: #94dac2; }
-
-::-webkit-scrollbar-button {
-  background-color: #1f8a66; }
-  ::-webkit-scrollbar-button:hover {
-    background-color: #114c38; }
-  ::-webkit-scrollbar-button:vertical {
-    height: 1rem; }
-    ::-webkit-scrollbar-button:vertical:decrement {
-      border-radius: 0 0 0.3rem 0.3rem; }
-    ::-webkit-scrollbar-button:vertical:increment {
-      border-radius: 0.3rem 0.3rem 0 0; }
-  ::-webkit-scrollbar-button:horizontal {
-    width: 1rem; }
-    ::-webkit-scrollbar-button:horizontal:decrement {
-      border-radius: 0 0.3rem 0.3rem 0; }
-    ::-webkit-scrollbar-button:horizontal:increment {
-      border-radius: 0.3rem 0 0 0.3rem; }
+  background: #cccccc; }
 
 .panel-body {
-  scrollbar-face-color: #28b485;
-  scrollbar-track-color: #94dac2; }
+  scrollbar-face-color: #999;
+  scrollbar-track-color: #cccccc; }
 
 body {
   font-family: "Lato", "sans-serif";
@@ -162,6 +145,10 @@ body {
 .u-margin-top-small {
   margin-top: 1.5rem !important; }
 
+.u-padding-sides-small {
+  margin-left: 1.5rem !important;
+  margin-right: 1.5rem !important; }
+
 .btn {
   /*
     Used for the animation when hovering over the button, creates a 'shadow' button that will be 
@@ -242,13 +229,13 @@ body {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 0.3rem;
     position: absolute;
-    z-index: 10;
+    z-index: 2;
     transition: all .2s;
     outline-offset: 1rem; }
     .composition__photo:hover {
       outline: 1.1rem solid #7ed56f;
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20;
+      z-index: 3;
       transform: scale(1.05) translateY(-0.5rem); }
     .composition__photo--p1 {
       left: 0;
@@ -854,6 +841,114 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
+.footer {
+  transform: skewy(0deg);
+  padding: 10rem 0;
+  margin-top: -10.5rem;
+  font-size: 1.4rem;
+  z-index: 1;
+  background: #333; }
+  .footer__logo-box {
+    text-align: center;
+    margin-top: -6rem;
+    margin-bottom: 2rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    padding-top: 2rem;
+    border-top: 0.1rem solid #777;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #b8b8b8;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all .3s; }
+  .footer__link:hover, .footer__link:active {
+    color: #7ed56f; }
+  .footer__copyright {
+    padding-top: 2rem;
+    border-top: 0.1rem solid #777;
+    display: inline-block; }
+
+.navigation__checkbox {
+  display: none; }
+
+.navigation__button {
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 30; }
+
+.navigation__background {
+  background-image: radial-gradient(#62df8a, #28b485);
+  height: 6rem;
+  width: 6rem;
+  border-radius: 60%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  z-index: 10;
+  transform: scale(80); }
+
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20; }
+
+.navigation__list {
+  counter-reset: section;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center; }
+
+.navigation__item {
+  margin: 1rem; }
+
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 220%;
+  transition: all 0.3s;
+  backface-visibility: none; }
+
+.navigation__link::before {
+  counter-increment: section;
+  content: "0" counter(section) " ";
+  margin-right: 1rem; }
+
+.navigation__link span {
+  margin-right: 1.5rem;
+  display: inline-block; }
+
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #7ed56f;
+  transform: translateX(1rem); }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -882,6 +977,7 @@ body {
 .section-booking {
   transform: skewY(-6.5deg);
   padding: 15rem 0;
+  padding-bottom: 20rem;
   background-image: linear-gradient(to right bottom, #62df8a, #28b485); }
   .section-booking > * {
     transform: skewY(6.5deg); }

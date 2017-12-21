@@ -20,7 +20,7 @@ body {
 }
 
 @include scrollbars(.8, 
-                  $color-primary-dark, 
-                  mix($color-primary-dark, white,  50%), 
-                  true,
+                  #999, 
+                  mix(#999, white,  50%), 
+                  false,
                   false);

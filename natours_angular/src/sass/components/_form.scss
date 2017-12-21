@@ -28,6 +28,13 @@
       color: $color-grey-dark-2;
     }
 
+    // Hide Webkit placeholders when the input element receives focus
+
+    &[placeholder]:focus::-webkit-input-placeholder {
+      transition: opacity 0.2s 0.2s ease-out; 
+      opacity: 0;
+    }
+
     &:focus:invalid{
       border-bottom: .3rem solid $color-secondary-dark;
     }
@@ -47,7 +54,7 @@
   // to select a genreal sibling that is not adjacent to the element.
 
   // Note: The sibling has to be AFTER the current element.
-  &__input:placeholder-shown + &__label {
+  &__input:not(:focus) + &__label {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
@@ -80,6 +87,7 @@
     padding-left: 3.5rem;
   }
 
+  // will be the actual radio box.
   &__radio-button {
     height: 3rem;
     width: 3rem;
