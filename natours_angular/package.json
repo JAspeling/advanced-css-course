@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compile:sass": "node-sass src/sass/main.scss src/css/styles.css -w",
-    "install": "npm install --no-optional"
+    "update": "rimraf node_modules & npm install --no-optional"
   },
   "private": true,
   "dependencies": {

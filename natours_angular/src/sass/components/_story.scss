@@ -28,8 +28,8 @@
     &__image {
         height: 100%;
         transform: scale(1.2);
+        transition: transform .3s;
         backface-visibility: hidden;
-        transition: all .3s;
     }
     &__text {
         transform: skew(12deg);
@@ -47,7 +47,6 @@
         font-size: 1.7rem;
         text-align: center;
         transition: all .3s;
-        backface-visibility: hidden;
     }
     &:hover &__caption {
         opacity: 1;
@@ -56,6 +55,5 @@
     &:hover &__image {
         transform: scale(1);
         filter: blur(3px) brightness(80%);
-        backface-visibility: hidden;
     }
 }

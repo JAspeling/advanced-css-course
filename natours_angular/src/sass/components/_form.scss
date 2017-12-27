@@ -85,6 +85,7 @@
     cursor: pointer; 
     position: relative;
     padding-left: 3.5rem;
+    backface-visibility: hidden;
   }
 
   // will be the actual radio box.
@@ -112,7 +113,7 @@
       background-color: $color-primary;
       opacity: 0;
 
-      transition: all .2s;
+      transition: opacity .2s;
     }
   }
 
