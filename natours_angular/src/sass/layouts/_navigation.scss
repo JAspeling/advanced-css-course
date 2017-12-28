@@ -22,6 +22,8 @@
       right: 4rem;
     }
     @include respond(phone) {
+      height: 5rem;
+      width: 5rem;
       top: 3.5rem;
       right: 3.5rem;
     }
@@ -41,13 +43,13 @@
     right: 6.5rem;
     z-index: 10;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    
     @include respond(tab-port) {
       top: 4.5rem;
       right: 4.5rem;
     }
-
     @include respond(phone) {
+      height: 4rem;
+      width: 4rem;
       top: 4rem;
       right: 4rem;
     }
@@ -124,6 +126,11 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
+
+    @include respond(phone) {
+      margin-top: 2.5rem;
+    }
+
     &,
     &::before,
     &::after {
@@ -131,6 +138,10 @@
       height: 2px;
       background-color: $color-grey-dark-3;
       display: inline-block;
+
+      @include respond(phone) {
+        width: 2rem;
+      }
     }
     &::before,
     &::after {
@@ -141,9 +152,15 @@
     }
     &::before {
       top: -0.8rem;
+      @include respond(phone) {
+        top: -0.5rem;
+      }
     }
     &::after {
       top: 0.8rem;
+      @include respond(phone) {
+        top: 0.5rem;
+      }
     }
   }
   &__button:hover &__icon::before {

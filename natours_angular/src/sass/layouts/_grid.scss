@@ -1,7 +1,8 @@
 .row {
   max-width: $grid-width;
-  // background-color: #eee;
+  // background-color: orangered;
   margin: 0 auto; // Center
+
 
   // Everything except the last child psuedo class.
   &:not(:last-child) {
@@ -27,7 +28,7 @@
   // * : contains the part 'col-'
   // $ : ends with "col-"
   [class^="col-"] {
-    // background-color: green;
+    //  background-color: green;
     // color: #eee;
     float: left;
 

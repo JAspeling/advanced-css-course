@@ -8,6 +8,17 @@
   font-size: $default-font-size;
   padding-left: 9rem;
   transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond (phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     position: relative;
     width: 15rem;
@@ -24,6 +35,10 @@
     // transform translate
     transform: translateX(-3rem) skew(12deg);
     overflow: hidden;
+
+    @include respond (phone) {
+      transform: translateX(-3rem) skew(0);
+    }
   }
   &__image {
     height: 100%;
@@ -34,6 +49,10 @@
   &__text {
     transform: skew(12deg);
     backface-visibility: hidden;
+    
+    @include respond (phone) {
+      transform: skew(0);
+    }
   }
   &__caption {
     // Intial state should be to the bottom of the image for the
