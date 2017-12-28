@@ -13,7 +13,47 @@
   transform: translate($x, $y);
 }
 
-/* You can add global styles to this file, and also import other style files */
+/*#region Media Query Manager */
+
+// MEDIA QUERY MANAGER
+/*
+
+Desktop-first approach 
+
+0 - 600px:    Phone
+600 - 900px:  Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800] is where our normal styles apply
+1800px +:     Big Desktop
+
+1em = 16px;
+
+*/
+
+/// Mixin to handle Media Queries
+/// @param {Breakpoint} $breakpoint - Width breakpoint to handle the responsiveness (phone, tab-port, tab-land, big-desktop)
+/// @example scss - Scrollbar styling
+///  @include respond(phone) { scss code... }
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content; }    // 600px / 16px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content; }   // 900px / 16px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content; }      // 1200px / 16px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) { @content; }   //1800px / 16px
+  }
+}
+/*#endregion Media Query Manager */
+
+/*#region Scrollbars*/
 /// Mixin to customize scrollbars
 /// Beware, this does not work in all browsers
 /// @author Hugo Giraudel
@@ -50,7 +90,7 @@
   @if $showScrollButtons == true {
     ::-webkit-scrollbar-button {
       background-color: darken($foreground-color, 10%);
-      
+
       &:hover {
         background-color: darken($foreground-color, 25%);
       }
@@ -104,3 +144,4 @@
     scrollbar-track-color: $background-color;
   }
 }
+/*#endregion*/
